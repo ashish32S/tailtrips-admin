@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TailTrips Admin — Admin Settings</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">🏝️ TailTrips Admin</div>
+      <nav class="nav">
+        <a id="nav-dashboard" href="index.html">Dashboard</a>
+        <a id="nav-properties" href="properties.html">Properties</a>
+        <a id="nav-users" href="users.html">Users</a>
+        <a id="nav-bookings" href="bookings.html">Bookings</a>
+        <a id="nav-admin" href="admin.html">Admin Settings</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <h2>Admin Settings</h2>
+          <div class="muted">Manage your admin account</div>
+        </div>
+        <div class="right">
+          <div>
+            <div id="topAdminName" class="muted"></div>
+            <div id="topAdminEmail" class="muted"></div>
+          </div>
+          <button id="logoutBtn" class="btn secondary">Logout</button>
+        </div>
+      </div>
+
+      <div class="grid cols-2">
+        <div class="card">
+          <h3 style="margin-top:0">Profile</h3>
+          <form id="adminProfileForm" class="form-grid">
+            <div class="full">
+              <label>Name</label>
+              <input id="admin_name" />
+            </div>
+            <div class="full">
+              <label>Email</label>
+              <input id="admin_email" type="email" />
+            </div>
+            <div class="full">
+              <label>Current Password (required to change email)</label>
+              <input id="admin_current_password" type="password" />
+            </div>
+            <div class="full actions" style="margin-top:8px">
+              <button class="btn" type="submit">Update Profile</button>
+            </div>
+          </form>
+          <div id="adminProfileNotice" class="notice hidden" style="margin-top:8px"></div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0">Change Password</h3>
+          <form id="adminPasswordForm" class="form-grid">
+            <div class="full">
+              <label>Current Password</label>
+              <input id="pwd_current" type="password" required />
+            </div>
+            <div class="full">
+              <label>New Password</label>
+              <input id="pwd_new" type="password" required />
+            </div>
+            <div class="full actions" style="margin-top:8px">
+              <button class="btn" type="submit">Change Password</button>
+            </div>
+          </form>
+          <div id="adminPasswordNotice" class="notice hidden" style="margin-top:8px"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="assets/js/admin.js"></script>
+</body>
+</html>
