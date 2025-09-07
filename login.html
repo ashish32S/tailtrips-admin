@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TailTrips Admin — Login</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout" style="grid-template-columns:1fr">
+    <main class="main" style="max-width:520px;margin:60px auto 0;">
+      <div class="card">
+        <h2 style="margin-top:0;margin-bottom:8px">Admin Login</h2>
+        <div class="muted" style="margin-bottom:12px">Sign in with your admin credentials</div>
+        <form id="loginForm" class="form-grid">
+          <div class="full">
+            <label>Email</label>
+            <input id="login_email" type="email" required />
+          </div>
+          <div class="full">
+            <label>Password</label>
+            <input id="login_password" type="password" required />
+          </div>
+          <div class="full actions" style="margin-top:8px">
+            <button class="btn" type="submit" id="loginBtn">Sign In</button>
+          </div>
+        </form>
+        <div id="loginNotice" class="notice hidden" style="margin-top:8px"></div>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="assets/js/login.js"></script>
+</body>
+</html>
