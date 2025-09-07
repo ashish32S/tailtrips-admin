@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TailTrips Admin — Dashboard</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">🏝️ TailTrips Admin</div>
+      <nav class="nav">
+        <a id="nav-dashboard" href="index.html">Dashboard</a>
+        <a id="nav-properties" href="properties.html">Properties</a>
+        <a id="nav-users" href="users.html">Users</a>
+        <a id="nav-bookings" href="bookings.html">Bookings</a>
+        <a id="nav-admin" href="admin.html">Admin Settings</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <h2>Dashboard</h2>
+          <div class="muted">Live metrics and analytics</div>
+        </div>
+        <div class="right">
+          <div>
+            <div id="topAdminName" class="muted"></div>
+            <div id="topAdminEmail" class="muted"></div>
+          </div>
+          <button id="logoutBtn" class="btn secondary">Logout</button>
+        </div>
+      </div>
+
+      <section class="grid cols-4">
+        <div class="card stat">
+          <div class="label">Total Users</div>
+          <div id="statUsers" class="value">0</div>
+        </div>
+        <div class="card stat">
+          <div class="label">Total Properties</div>
+          <div id="statProperties" class="value">0</div>
+        </div>
+        <div class="card stat">
+          <div class="label">Total Bookings</div>
+          <div id="statBookings" class="value">0</div>
+        </div>
+        <div class="card stat">
+          <div class="label">Total Revenue</div>
+          <div class="kpi"><span id="statRevenue" class="value">$0</span><span class="unit">USD</span></div>
+        </div>
+      </section>
+
+      <section class="grid cols-2" style="margin-top:16px">
+        <div class="card">
+          <div class="label" style="margin-bottom:8px">Revenue by Month</div>
+          <canvas id="revenueChart" height="140"></canvas>
+        </div>
+        <div class="card">
+          <div class="label" style="margin-bottom:8px">Bookings Trend</div>
+          <canvas id="bookingsTrendChart" height="140"></canvas>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="assets/js/dashboard.js"></script>
+</body>
+</html>

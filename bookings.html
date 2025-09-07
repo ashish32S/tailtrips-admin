@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TailTrips Admin — Bookings</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">🏝️ TailTrips Admin</div>
+      <nav class="nav">
+        <a id="nav-dashboard" href="index.html">Dashboard</a>
+        <a id="nav-properties" href="properties.html">Properties</a>
+        <a id="nav-users" href="users.html">Users</a>
+        <a id="nav-bookings" href="bookings.html">Bookings</a>
+        <a id="nav-admin" href="admin.html">Admin Settings</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <h2>Bookings</h2>
+          <div class="muted">Manage bookings and status</div>
+        </div>
+        <div class="right">
+          <div>
+            <div id="topAdminName" class="muted"></div>
+            <div id="topAdminEmail" class="muted"></div>
+          </div>
+          <button id="addBookingBtn" class="btn">Add Booking</button>
+          <button id="logoutBtn" class="btn secondary">Logout</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <table>
+          <thead>
+          <tr>
+            <th>Booking ID</th>
+            <th>User</th>
+            <th>Property</th>
+            <th>Check-in / Check-out</th>
+            <th>Total Paid</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody id="bookingsBody"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <div id="bookingModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="bookingModalTitle">Add Booking</h3>
+        <button id="closeBookingModal" class="btn secondary">Close</button>
+      </div>
+      <form id="bookingForm" class="form-grid">
+        <input type="hidden" id="bookingId" />
+        <div>
+          <label>User</label>
+          <select id="b_user_id" required></select>
+        </div>
+        <div>
+          <label>Property</label>
+          <select id="b_property_id" required></select>
+        </div>
+        <div>
+          <label>Check-in</label>
+          <input id="b_check_in" type="date" required />
+        </div>
+        <div>
+          <label>Check-out</label>
+          <input id="b_check_out" type="date" required />
+        </div>
+        <div>
+          <label>Guests</label>
+          <input id="b_guests" type="number" min="1" step="1" value="1" />
+        </div>
+        <div>
+          <label>Total Paid</label>
+          <input id="b_total_paid" type="number" min="0" step="0.01" required />
+        </div>
+        <div>
+          <label>Status</label>
+          <select id="b_status" required>
+            <option value="upcoming">upcoming</option>
+            <option value="past">past</option>
+            <option value="cancelled">cancelled</option>
+          </select>
+        </div>
+        <div class="full actions" style="margin-top:8px">
+          <button class="btn" type="submit">Save</button>
+          <button class="btn secondary" type="button" id="bookingFormCancel">Cancel</button>
+        </div>
+      </form>
+      <div id="bookingFormNotice" class="notice hidden" style="margin-top:8px"></div>
+    </div>
+  </div>
+
+  <script type="module" src="assets/js/bookings.js"></script>
+</body>
+</html>
